@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <!-- Header avec gradient et icône -->
+    <div class="card-header bg-gradient-products text-white py-4">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-box-seam-fill me-3" style="font-size: 2rem;"></i>
+          <h4 class="mb-0 fw-bold">Catalogue des Produits</h4>
+        </div>
+        <span class="badge bg-light text-info fs-6" *ngIf="products">
+          {{products._embedded?.products?.length || 0}} produit(s)
+        </span>
+      </div>
+    </div>
+
+    <!-- Corps du tableau -->
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle" *ngIf="products">
+          <thead class="table-light">
+          <tr>
+            <th class="ps-4"><i class="bi bi-hash text-info"></i> ID</th>
+            <th><i class="bi bi-tag text-info"></i> Nom du Produit</th>
+            <th class="text-end"><i class="bi bi-currency-dollar text-info"></i> Prix</th>
+            <th class="text-center"><i class="bi bi-boxes text-info"></i> Stock</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of products._embedded.products" class="product-row">
+            <td class="ps-4 fw-bold text-muted">#{{p.id}}</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <div class="product-icon me-3">
+                  <i class="bi bi-laptop"></i>
+                </div>
+                <div>
+                  <div class="fw-medium">{{p.name}}</div>
+                  <small class="text-muted">Produit électronique</small>
+                </div>
+              </div>
+            </td>
+            <td class="text-end">
+              <span class="price-tag">{{p.price | number:'1.2-2'}} DH</span>
+            </td>
+            <td class="text-center">
+                <span class="badge"
+                      [ngClass]="p.quantity > 10 ? 'bg-success' : p.quantity > 5 ? 'bg-warning' : 'bg-danger'">
+                  {{p.quantity}} unités
+                </span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Message si vide -->
+      <div *ngIf="!products || products._embedded?.products?.length === 0"
+           class="text-center py-5 text-muted">
+        <i class="bi bi-cart-x" style="font-size: 3rem;"></i>
+        <p class="mt-3">Aucun produit disponible</p>
+      </div>
+    </div>
+  </div>
+</div>

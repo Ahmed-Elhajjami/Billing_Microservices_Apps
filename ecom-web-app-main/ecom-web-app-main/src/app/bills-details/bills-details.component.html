@@ -1,0 +1,82 @@
+<div class="container mt-4" *ngIf="billsDetails">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card bill-detail-card">
+        <div class="card-header bill-info-header text-white">
+          <h5>📋 Facture N° {{billsDetails.id}}</h5>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush bill-info-list">
+            <li class="list-group-item">
+              <strong>Bill ID :</strong> {{billsDetails.id}}
+            </li>
+            <li class="list-group-item">
+              <strong>Date :</strong> {{billsDetails.billingDate | date : 'dd/MM/yyyy HH:mm'}}
+            </li>
+            <li class="list-group-item">
+              <strong>Customer ID :</strong> {{billsDetails.customerId}}
+            </li>
+            <li class="list-group-item">
+              <strong>Customer Name :</strong> {{billsDetails.customer?.name}}
+            </li>
+            <li class="list-group-item">
+              <strong>Customer Email :</strong> {{billsDetails.customer?.email}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card bill-detail-card">
+        <div class="card-header bill-items-header text-white">
+          <h5>🛒 Articles</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-sm bill-items-table">
+              <thead>
+              <tr>
+                <th>Product</th>
+                <th>Name</th>
+                <th class="text-center">Qty</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Total</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let pi of billsDetails.productItems">
+                <td><span class="product-badge">{{pi.productId}}</span></td>
+                <td>{{pi.product?.name}}</td>
+                <td class="text-center">{{pi.quantity}}</td>
+                <td class="text-end price-highlight">{{pi.unitPrice | number : '1.2-2'}} DH</td>
+                <td class="text-end price-highlight">{{(pi.quantity * pi.unitPrice) | number : '1.2-2'}} DH</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="4" class="text-end">TOTAL</td>
+                <td class="text-end">{{getTotal() | number : '1.2-2'}} DH</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <button class="btn btn-back" (click)="goBack()">
+        ← Retour à la liste
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4" *ngIf="!billsDetails">
+  <div class="alert alert-warning-custom alert-custom">
+    ⚠️ Aucune facture sélectionnée.
+  </div>
+</div>

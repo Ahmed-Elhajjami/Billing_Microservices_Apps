@@ -1,0 +1,102 @@
+/* ============================
+   STYLES POUR LISTE FACTURES
+   ============================ */
+
+/* Gradient bleu moderne pour les factures */
+.bg-gradient-bills {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Card principale */
+.bills-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.1);
+  border: none;
+}
+
+/* Header de la card */
+.bills-card .card-header {
+  padding: 1.5rem;
+  border-bottom: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.bills-card .card-header h4 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bills-card .card-header h4::before {
+  content: "📋";
+  font-size: 1.5rem;
+}
+
+/* Animation au hover sur les lignes */
+.bill-row {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.bill-row:hover {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  transform: translateX(8px);
+  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.15);
+}
+
+/* Badge pour l'ID */
+.bill-id-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Date stylée */
+.bill-date {
+  color: #667eea;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bill-date::before {
+  content: "📅";
+}
+
+/* Bouton détails */
+.btn-bill-details {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-bill-details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Table header */
+.table-bills thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.table-bills thead th {
+  border: none;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}

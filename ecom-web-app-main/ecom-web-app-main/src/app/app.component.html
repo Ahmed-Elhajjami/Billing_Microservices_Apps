@@ -1,0 +1,46 @@
+<!-- Navbar Moderne avec Gradient -->
+<nav class="navbar navbar-expand-sm navbar-modern">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-brand-custom" href="#">
+      Hamada Store
+    </a>
+
+    <!-- Toggler pour mobile -->
+    <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon navbar-toggler-icon-custom"></span>
+    </button>
+
+    <!-- Menu de navigation -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom products active" routerLink="/products" routerLinkActive="active">
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom customers" routerLink="/customers" routerLinkActive="active">
+            Customers
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle dropdown-toggle-custom" href="#" role="button" data-bs-toggle="dropdown">
+            ⚙️ Options
+          </a>
+          <ul class="dropdown-menu dropdown-menu-custom">
+            <li><a class="dropdown-item dropdown-item-custom" href="#">Paramètres</a></li>
+            <li><a class="dropdown-item dropdown-item-custom" href="#">Rapports</a></li>
+            <li><hr class="dropdown-divider dropdown-divider-custom"></li>
+            <li><a class="dropdown-item dropdown-item-custom" href="#">Aide</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Container pour le contenu avec animation -->
+<div class="router-outlet-container">
+  <router-outlet></router-outlet>
+</div>

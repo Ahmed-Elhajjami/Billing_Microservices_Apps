@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0">
+    <!-- Header avec gradient et icône -->
+    <div class="card-header bg-gradient-primary text-white py-4">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-people-fill me-3" style="font-size: 2rem;"></i>
+          <h4 class="mb-0 fw-bold">Liste des Customers</h4>
+        </div>
+        <span class="badge bg-light text-primary fs-6" *ngIf="customers">
+          {{customers._embedded?.customers?.length || 0}} client(s)
+        </span>
+      </div>
+    </div>
+
+    <!-- Corps du tableau -->
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle" *ngIf="customers">
+          <thead class="table-light">
+          <tr>
+            <th class="ps-4"><i class="bi bi-hash text-primary"></i> ID</th>
+            <th><i class="bi bi-person text-primary"></i> Nom</th>
+            <th><i class="bi bi-envelope text-primary"></i> Email</th>
+            <th class="text-center"><i class="bi bi-gear text-primary"></i> Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let c of customers._embedded.customers" class="customer-row">
+            <td class="ps-4 fw-bold">#{{c.id}}</td>
+            <td>
+              <div class="d-flex align-items-center">
+                <div class="avatar-circle me-2">
+                  {{c.name.charAt(0).toUpperCase()}}
+                </div>
+                <span class="fw-medium">{{c.name}}</span>
+              </div>
+            </td>
+            <td class="text-muted">{{c.email}}</td>
+            <td class="text-center">
+              <button class="btn btn-success btn-sm px-4 shadow-sm" (click)="getBills(c)">
+                <i class="bi bi-receipt me-1"></i> Voir Factures
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Message si vide -->
+      <div *ngIf="!customers || customers._embedded?.customers?.length === 0"
+           class="text-center py-5 text-muted">
+        <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+        <p class="mt-3">Aucun customer trouvé</p>
+      </div>
+    </div>
+  </div>
+</div>

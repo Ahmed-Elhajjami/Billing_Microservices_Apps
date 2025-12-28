@@ -1,0 +1,208 @@
+/* ============================
+   STYLES POUR DÉTAILS FACTURE
+   ============================ */
+
+/* Cards de détails */
+.bill-detail-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  height: 100%;
+}
+
+/* Header info facture (bleu) */
+.bill-info-header {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+  padding: 1.2rem;
+  border-bottom: none;
+}
+
+/* Header articles (vert) */
+.bill-items-header {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%) !important;
+  padding: 1.2rem;
+  border-bottom: none;
+}
+
+.bill-detail-card .card-header h5 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+/* Liste des infos */
+.bill-info-list .list-group-item {
+  border: none;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 1rem;
+  transition: background 0.2s ease;
+}
+
+.bill-info-list .list-group-item:hover {
+  background-color: #f8f9ff;
+}
+
+.bill-info-list .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.bill-info-list strong {
+  color: #4facfe;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 140px;
+}
+
+/* Table des articles */
+.bill-items-table {
+  margin: 0;
+}
+
+.bill-items-table thead {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.bill-items-table thead th {
+  border: none;
+  padding: 0.8rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.bill-items-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.bill-items-table tbody tr:hover {
+  background-color: #f0fff8;
+  transform: scale(1.01);
+}
+
+.bill-items-table tbody td {
+  padding: 1rem 0.8rem;
+  vertical-align: middle;
+}
+
+/* Total footer */
+.bill-items-table tfoot {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.bill-items-table tfoot td {
+  padding: 1rem;
+  font-weight: 700;
+}
+
+/* Prix en couleur */
+.price-highlight {
+  color: #43e97b;
+  font-weight: 600;
+}
+
+/* Badge produit */
+.product-badge {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Bouton retour */
+.btn-back {
+  background: linear-gradient(135deg, #a8a8a8 0%, #757575 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #757575 0%, #555555 100%);
+}
+
+/* Alert stylé */
+.alert-custom {
+  border-radius: 15px;
+  border: none;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.alert-info-custom {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  color: #0369a1;
+}
+
+.alert-warning-custom {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bill-row:hover {
+    transform: translateX(0);
+  }
+
+  .table-responsive {
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+
+  .bill-detail-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bill-detail-card {
+  animation: fadeInUp 0.5s ease;
+}
+
+.bill-row {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Scrollbar custom pour la table */
+.table-responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}

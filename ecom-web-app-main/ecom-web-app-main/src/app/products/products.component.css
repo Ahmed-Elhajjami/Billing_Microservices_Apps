@@ -1,0 +1,58 @@
+/* Gradient bleu-vert pour les produits */
+.bg-gradient-products {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+}
+
+/* Animation au hover sur les lignes */
+.product-row {
+  transition: all 0.3s ease;
+}
+
+.product-row:hover {
+  background-color: #f0fff4;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(17, 153, 142, 0.1);
+}
+
+/* Icône du produit */
+.product-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(17, 153, 142, 0.2);
+}
+
+/* Prix stylé */
+.price-tag {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #11998e;
+}
+
+/* Badge de stock dynamique */
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Card style */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-header {
+  border-bottom: none;
+}
+
+/* Table styling */
+.table-light th i {
+  font-size: 1rem;
+}
